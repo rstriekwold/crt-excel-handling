@@ -46,6 +46,7 @@ Update Product Id
 
     # Save changes to excel and commit to git
     Save Excel Document         ${excel_worksheet}
+    Close All Excel Documents
     Commit And Push             ${excel_worksheet}          ${git_branch}
 
 Update Plannumber
@@ -55,7 +56,8 @@ Update Plannumber
     ${planNumber3}=             Set Variable                1223434
     ${planNumber4}=             Set Variable                1223434
 
-    ${document}=                Open Excel Document         ${excel_Plannumbers}    products
+    ${document}=                Open Excel Document         ${excel_Plannumbers}    plannumbers
     Write Excel Cell            row_num=2                   col_num=1               value=${planNumber1}
     Save Excel Document         ${excel_worksheet}
+    Close All Excel Documents
     Commit And Push             ${excel_worksheet}          ${git_branch}
