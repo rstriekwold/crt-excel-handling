@@ -1,4 +1,4 @@
-cd crt-excel-handling
-git config --global user.email "rstriekwold@copado.com"
-git config --global user.name "rstriekwold"
-git push origin main --force
+#cd crt-excel-handling
+#git config --global user.email "rstriekwold@copado.com"
+#git config --global user.name "rstriekwold"
+#git push origin main --force
