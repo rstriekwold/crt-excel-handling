@@ -9,7 +9,7 @@ Library                  OperatingSystem
 
 *** Test Cases ***
 Create csv and push
-    ${csvFile}=          ${CURDIR}/../resources/storedfiles/test.csv
+    ${csvFile}=         Set Variable     ${CURDIR}/../resources/storedfiles/test.csv
     ${planNumber1}=      Set Variable                1337
     Create File          ${csvFile}
     ${header_string}=    Plannumbers
