@@ -50,7 +50,7 @@ Update Product Id
 
 Update Plannumber
     GoTo                        ${webshop}
-    ${planNumber1}=             Set Variable                1223434
+    ${planNumber1}=             Set Variable                1337
     ${planNumber2}=             Set Variable                1223434
     ${planNumber3}=             Set Variable                1223434
     ${planNumber4}=             Set Variable                1223434
