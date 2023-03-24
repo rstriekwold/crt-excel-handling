@@ -36,6 +36,7 @@ class GitOperations(object):
         logger.console("\n" + my_repo.git.status() + "\n")
 
         # Add, commit and push to git
+        my_repo.index.fetch
         my_repo.index.add(path_to_file)
         my_repo.index.commit("CRT robot commiting changes to {}".format(file_name))
         my_repo.git.push("origin", git_branch)
