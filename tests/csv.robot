@@ -15,7 +15,7 @@ Create csv and push
     ${header_string}=    Convert to String           Plannumbers
 
     # Create the header
-    # Append To File       ${csvFile}                  ${header_string}
+    Append To File       ${csvFile}                  ${header_string}
     Append To File       ${csvFile}                    ${planNumber1}
     Append To File       ${csvFile}                    \n${planNumber2}
     Commit And Push             ${csvFile}          ${git_branch}
