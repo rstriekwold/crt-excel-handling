@@ -20,4 +20,11 @@ Create csv and push
     Append To File       ${csvFile}                    \n${planNumber2}
     Commit And Push             ${csvFile}          ${git_branch}
 
-    ${fileData}=                Get File                    ${CURDIR}/../data/test.csv
+    ${fileData}=                Get File                    ../data/test.csv
+    @{read}=    Create List    ${fileData}
+     @{lines}=    Split To Lines    @{read}    1
+     FOR    ${line_csv}    IN    @{lines}
+         Log To Console    ${line_csv}
+     END
+     RemoveFile            ../data/test.csv
+     Commit And Push             ${csvFile}          ${git_branch}
