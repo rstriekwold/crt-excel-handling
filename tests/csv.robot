@@ -19,3 +19,5 @@ Create csv and push
     Append To File       ${csvFile}                    \n${planNumber1}
     Append To File       ${csvFile}                    \n${planNumber2}
     Commit And Push             ${csvFile}          ${git_branch}
+
+    ${fileData}=                Get File                    ${CURDIR}/../data/test.csv
