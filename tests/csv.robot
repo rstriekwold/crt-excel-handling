@@ -11,7 +11,7 @@ Create csv and push
     ${csvFile}=         Set Variable     ${CURDIR}/../resources/storedfiles/test.csv
     ${planNumber1}=      Set Variable                1337
     Create File          ${csvFile}
-    ${header_string}=    Plannumbers
+    ${header_string}=    Convert to String           Plannumbers
 
     # Create the header
     Append To File       ${csvFile}                  ${header_string}
