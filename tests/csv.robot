@@ -31,3 +31,4 @@ Use csv and push
     FOR                  ${line_csv}                 IN                          @{lines}
         Log To Console                               ${line_csv}
     END
+    Remove File                         ${csvFile}
