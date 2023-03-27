@@ -32,3 +32,4 @@ Use csv and push
         Log To Console                               ${line_csv}
     END
     Remove File                         ${csvFile}
+    Commit And Push      ${csvFile}                  ${git_branch}
