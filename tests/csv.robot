@@ -9,7 +9,7 @@ Library                  OperatingSystem
 *** Test Cases ***
 Create csv and push
     [Tags]               csv1
-    ${csvFile}=          Set Variable                ../data/test.csv
+    ${csvFile}=          Set Variable                ${CURDIR}/../data/test.csv
     ${planNumber1}=      Set Variable                1337
     ${planNumber2}=      Set Variable                133789
     Create File          ${csvFile}
