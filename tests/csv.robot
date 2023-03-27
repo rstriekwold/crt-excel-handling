@@ -8,7 +8,8 @@ Library                  OperatingSystem
 
 *** Test Cases ***
 Create csv and push
-    ${csvFile}=         Set Variable     ${CURDIR}/../data/test.csv
+    [Tags]               csv1
+    ${csvFile}=          Set Variable                ../data/test.csv
     ${planNumber1}=      Set Variable                1337
     ${planNumber2}=      Set Variable                133789
     Create File          ${csvFile}
@@ -16,13 +17,16 @@ Create csv and push
 
     # Create the header
     Append To File       ${csvFile}                  ${header_string}
-    Append To File       ${csvFile}                    \n${planNumber1}
-    Append To File       ${csvFile}                    \n${planNumber2}
-    Commit And Push             ${csvFile}          ${git_branch}
+    Append To File       ${csvFile}                  \n${planNumber1}
+    Append To File       ${csvFile}                  \n${planNumber2}
+    Commit And Push      ${csvFile}                  ${git_branch}
 
-    ${fileData}=                Get File                    ../data/test.csv
-    @{read}=    Create List    ${fileData}
-     @{lines}=    Split To Lines    @{read}    1
-     FOR    ${line_csv}    IN    @{lines}
-         Log To Console    ${line_csv}
-     END
+
+Use csv and push
+    [Tags]               csv2
+    ${fileData}=         Get File                    ../data/test.csv
+    @{read}=             Create List                 ${fileData}
+    @{lines}=            Split To Lines              @{read}                     1
+    FOR                  ${line_csv}                 IN                          @{lines}
+        Log To Console                               ${line_csv}
+    END
