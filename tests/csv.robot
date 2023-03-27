@@ -24,7 +24,8 @@ Create csv and push
 
 Use csv and push
     [Tags]               csv2
-    ${fileData}=         Get File                    ../data/test.csv
+    ${csvFile}=          Set Variable                ../data/test.csv
+    ${fileData}=         Get File                    ${csvFile}
     @{read}=             Create List                 ${fileData}
     @{lines}=            Split To Lines              @{read}                     1
     FOR                  ${line_csv}                 IN                          @{lines}
